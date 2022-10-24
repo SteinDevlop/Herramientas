@@ -8,3 +8,5 @@ Necesitarás tener instalado Python en su última versión o cercana a la últim
 
 ## Importante
 Probablemente, tengas que hacer cambios manuales sobre la ruta de las carpetas que se expresa en orden.py.
+
+Actualmente solo funcional para linux
