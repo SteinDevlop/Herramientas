@@ -1,8 +1,6 @@
 from PIL import Image
 import os
 
-from numpy import tile
-
 if __name__ == "__main__":
     def message():
         title_text = "Mover And Order Python Script"
