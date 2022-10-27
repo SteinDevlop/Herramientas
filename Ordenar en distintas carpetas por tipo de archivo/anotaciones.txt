@@ -1,1 +1,2 @@
 * usar POO (clases)
+* Agragar series de mensajes para que se vean los cambios de carpetas

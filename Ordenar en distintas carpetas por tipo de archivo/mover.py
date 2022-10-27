@@ -16,21 +16,29 @@ Advanced Options:
 "WTF" mode, scans all folders and moves ALL EXTENSIONS to their corresponding folder
 
 """)
+    def change_folder():
+        return f"\x1b[1;33m"+" , ha cambiado a la ubicacion: \033[0;m"
     def convert(foldir):
         for filename in os.listdir(foldir):
             name, extension = os.path.splitext(foldir + filename)
             if extension in pics:
                 os.rename(foldir + filename, picturesFolder + filename)
+                print(f"* {foldir + filename}{change_folder()}{picturesFolder + filename}")
             if extension in audio:
                 os.rename(foldir + filename, musicFolder + filename)
+                print(f"* {foldir + filename}{change_folder()}{musicFolder + filename}")
             if extension in video:
                 os.rename(foldir + filename, videoFolder + filename)
+                print(f"* {foldir + filename}{change_folder()}{videoFolder + filename}")
             if extension in docs:
                 os.rename(foldir + filename, fileFolder + filename)
+                print(f"* {foldir + filename} {change_folder()}{fileFolder + filename}")
             if extension in exe:
                 os.rename(foldir + filename, exeFolder + filename)
+                print(f"* {foldir + filename} {change_folder()}{exeFolder + filename}")
             if extension in download:
                 os.rename(foldir + filename, Download_Folder + filename)
+                print(f"* {foldir + filename} {change_folder()}{Download_Folder + filename}")
     user_name = os.getlogin()
     Download_Folder = f"/home/{user_name}/Downloads/"
     picturesFolder = f"/home/{user_name}/Pictures/"
@@ -61,8 +69,8 @@ Select 1 or 2:
         convert(videoFolder)
         convert(fileFolder)
         convert(exeFolder)
-        print("Advanced execution mode has ended")
-        print("Exit ...")
+        print("* Advanced execution mode has ended")
+        print("* Exit ...")
         exit()
     else:
         print("An error has occurred in the response selection, please make your response 1 or 2.")
