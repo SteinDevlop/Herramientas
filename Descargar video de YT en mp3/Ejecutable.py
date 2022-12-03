@@ -1,20 +1,44 @@
-import pytube
-import os
-def eleccion_tipo_1(url_singular):
-    pass
-path = os.getcwd()
-path_Dowload = path + "/Descargas"
-print("Descargar 1 link o varios?")
-print("""1 link: 1
-varios links (lectura del .txt): 2
-Playlist: 3""")
-eleccion_tipo = input("(1/2/3): ")
-if eleccion_tipo == 1:
-    url_singular = str(input("Url Singular: "))
+from comandos import commands as cm
+from url import urls as url
 
-elif eleccion_tipo == 2:
-    pass
-elif eleccion_tipo == 3:
-    pass
-else:
-    print("Error de ingreso: Seleccione unicamente 1 o 2 o 3.")
+def eleccion_2_mensaje():
+    print("""1. Añadir un video.
+2. Mirar lista de url para descargar.
+3. Descargar archivos de la lista.
+4. Salir.""")
+
+
+eleccion_tipo = None
+while eleccion_tipo != 5:
+    print("".center(50,"-"))
+    print("Descargar video de yt en mp3")
+    print("".center(50,"-"))
+    print("""
+    Advertencia : **********""")
+    print("".center(50,"-"))
+    print("""1. solo un link.
+2. Gestionar lista de links. (varios que no estan en una playlist)
+3. Playlist.
+4. Borrar musica descargada y resetear lista de descarga.
+5. Salir.""")
+    print("".center(50,"-"))
+    try:
+        eleccion_tipo = int(input("(1/2/3/4/5): "))
+    except Exception as e:
+        print(f"Error generado tipo: {type(e)}")
+    if eleccion_tipo == 1:
+        print("".center(50,"-"))
+        link = url(str(input("Url del video YT: ")))
+        cm.one_link(link)
+        print("".center(50,"-"))
+    elif eleccion_tipo == 2:
+        pass
+    elif eleccion_tipo == 3:
+        pass
+    elif eleccion_tipo == 4:
+        print("".center(50,"-"))
+        cm.delete_data()
+        print("Datos borrados")
+        print("".center(50,"-"))
+    elif eleccion_tipo == 5:
+        exit()
