@@ -28,7 +28,7 @@ while eleccion_tipo != 5:
         print(f"Error generado tipo: {type(e)}")
     if eleccion_tipo == 1:
         print("".center(50,"-"))
-        link = url(str(input("Url del video YT: ")))
+        link = (str(input("Url del video YT: ")))
         cm.one_link(link)
         print("".center(50,"-"))
     elif eleccion_tipo == 2:
